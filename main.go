@@ -50,7 +50,7 @@ func main() {
 	log.Printf("Setting EBS limit %s", limit)
 	err = updatePodStatus(limit)
 	if err != nil {
-		log.Printf("Unable to create ebs-limit configmap: %v\n", err)
+		log.Printf("Unable to set label for ebs-limit: %v\n", err)
 		os.Exit(1)
 	}
 }
