@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2021-02-11
+
 ### Added
 
 - Select max amount of EBS volumes per instance size.
@@ -17,5 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
-[Unreleased]: https://github.com/giantswarm/aws-ebs-csi-volume-limiter/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/giantswarm/aws-ebs-csi-volume-limiter/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/giantswarm/aws-ebs-csi-volume-limiter/compare/v0.0.1...v0.1.0
 [0.0.1]: https://github.com/giantswarm/aws-ebs-csi-volume-limiter/releases/tag/v0.0.1
