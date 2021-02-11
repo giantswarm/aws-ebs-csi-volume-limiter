@@ -51,9 +51,15 @@ func main() {
 		os.Exit(1)
 	}
 
-	instanceSize := strings.Split(identity.InstanceType, ".")
+	var instanceSize string
+	instanceType := strings.Split(identity.InstanceType, ".")
+	if len(instanceType) < 2 {
+		instanceSize = "default"
+	} else {
+		instanceSize = instanceType[1]
+	}
 
-	limit, ok := ebsLimit[instanceSize[1]]
+	limit, ok := ebsLimit[instanceSize]
 	if !ok {
 		log.Printf("Unable to find instance type in map, setting default allocatable volumes %s\n", ebsLimit["default"])
 		limit = ebsLimit["default"]
