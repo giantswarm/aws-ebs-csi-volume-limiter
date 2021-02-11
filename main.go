@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"log"
 	"os"
+	"strings"
 
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/feature/ec2/imds"
@@ -16,8 +17,17 @@ import (
 )
 
 var ebsLimit = map[string]string{
-	"m4.xlarge": "14",
-	"default":   "39",
+	"large":    "25",
+	"xlarge":   "24",
+	"2xlarge":  "24",
+	"4xlarge":  "17",
+	"8xlarge":  "17",
+	"9xlarge":  "17",
+	"12xlarge": "17",
+	"16xlarge": "10",
+	"18xlarge": "10",
+	"24xlarge": "10",
+	"default":  "20",
 }
 
 type patchStringValue struct {
@@ -41,7 +51,15 @@ func main() {
 		os.Exit(1)
 	}
 
-	limit, ok := ebsLimit[identity.InstanceType]
+	var instanceSize string
+	instanceType := strings.Split(identity.InstanceType, ".")
+	if len(instanceType) < 2 {
+		instanceSize = "default"
+	} else {
+		instanceSize = instanceType[1]
+	}
+
+	limit, ok := ebsLimit[instanceSize]
 	if !ok {
 		log.Printf("Unable to find instance type in map, setting default allocatable volumes %s\n", ebsLimit["default"])
 		limit = ebsLimit["default"]
