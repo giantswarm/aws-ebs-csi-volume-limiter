@@ -9,6 +9,4 @@ require (
 	k8s.io/client-go v0.18.9
 )
 
-replace (
-	github.com/gogo/protobuf v1.3.1 => github.com/gogo/protobuf v1.3.2
-)
+replace github.com/gogo/protobuf v1.3.1 => github.com/gogo/protobuf v1.3.2
