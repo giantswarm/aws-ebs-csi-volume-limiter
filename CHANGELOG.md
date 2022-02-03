@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Use go 1.17
+- Use `github.com/golang-jwt/jwt` to avoid vulnerability.
+
 ## [0.1.0] - 2021-02-11
 
 ### Added
