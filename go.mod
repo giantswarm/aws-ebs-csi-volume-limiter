@@ -5,8 +5,8 @@ go 1.17
 require (
 	github.com/aws/aws-sdk-go-v2/config v1.13.1
 	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.10.0
-	k8s.io/apimachinery v0.18.19
-	k8s.io/client-go v0.18.19
+	k8s.io/apimachinery v0.20.15
+	k8s.io/client-go v0.20.15
 )
 
 require (
